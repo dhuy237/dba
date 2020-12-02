@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- <script type="text/javascript">
+        $(document).ready(function(){
+            $('.search-box input[type="text"]').on("keyup input", function(){
+                /* Get input value on change */
+                var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+                if(inputVal.length){
+                    $.get("employee.php", {term: inputVal}).done(function(data){
+                        // Display the returned data in browser
+                        resultDropdown.html(data);
+                    });
+                } else{
+                    resultDropdown.empty();
+                }
+            });
+            
+            // Set search input value on click of result item
+            $(document).on("click", ".result p", function(){
+                $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+                $(this).parent(".result").empty();
+            });
+        });
+    </script> -->
+</head>
+<body>
+    <div class="search-box">
+        <input id="search_text"type="number" autocomplete="off" placeholder="Search Employee" onkeydown = "if (event.keyCode == 13) 
+        document.getElementById('enter').click()"/>
+        <button id="enter" onclick="showSearch()">Search</button>
+        <div class="result"></div>
+    </div>
+    <div id="table"></div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
