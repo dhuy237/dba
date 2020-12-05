@@ -1,5 +1,5 @@
 <?php
-    include "index.html";
+    include "header.html";
 
     if (isset($_GET['page'])){
         $page = $_GET['page'];
