@@ -13,28 +13,18 @@ else {
     die(print_r(sqlsrv_errors(), true));
 }
 
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$email_address = $_POST['email_address'];
-$home_address = $_POST['home_address'];
-$office_address = $_POST['office_address'];
-$phone_number = $_POST['phone_number'];
+$customer_code = $_POST['customer_code'];
 $account_check = $_POST['account_type'];
 $date_input = $_POST['date_input'];
 $balance = $_POST['balance'];
 $ins_rate = $_POST['ins_rate'];
 
-$sql = "EXEC [dbo].[SP_InsertCustomer] @c_firstname = ?, @c_lastname = ?, @c_email = ?, @c_homeaddress = ?, @c_officeAddress = ?, @c_phone = ?, @acc_type = ?, @date = ?, @balance = ?, @insRate = ?";
+$sql = "EXEC [dbo].[SP_InsertAccount] @acc_type = ?, @date = ?, @c_code = ?, @balance = ?, @insRate = ?";
 
 $params = array(
-    array($first_name, SQLSRV_PARAM_IN),
-    array($last_name, SQLSRV_PARAM_IN),
-    array($email_address, SQLSRV_PARAM_IN),
-    array($home_address, SQLSRV_PARAM_IN),
-    array($office_address, SQLSRV_PARAM_IN),
-    array($phone_number, SQLSRV_PARAM_IN),
     array($account_check, SQLSRV_PARAM_IN),
     array($date_input, SQLSRV_PARAM_IN),
+    array($customer_code, SQLSRV_PARAM_IN),
     array($balance, SQLSRV_PARAM_IN),
     array($ins_rate, SQLSRV_PARAM_IN)
 );
@@ -44,7 +34,7 @@ if ($stmt === false) {
     echo "Something wrong, try again!";
     die;
 }
-header("location:index.php?page=addNewDone");
+header("location:index.php?page=addExistedDone");
 
 sqlsrv_free_stmt($stmt);
 sqlsrv_close($conn);
