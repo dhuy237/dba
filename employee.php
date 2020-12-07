@@ -1,7 +1,7 @@
 <?php
 // Test connection
 $server_name = "bankingdb-hcmut.database.windows.net";
-$connection = array("Database"=>"BankingDatabase", "UID"=>"bankowner", "PWD"=>"Test1234");
+$connection = array("Database"=>"BankingDB", "UID"=>"bankowner", "PWD"=>"Test1234");
 
 $conn = sqlsrv_connect($server_name, $connection);
 
