@@ -26,7 +26,7 @@
             <img src="images/1.png" class="logo" width="10%" height="auto" alt="logo" />
             <h1>My website name</h1>
         </div> -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php?page=home">
             <img src="images/1.png" width="30" height="auto" class="d-inline-block align-top" alt="" loading="lazy">
             Bank Database
           </a>
@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php?page=home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?page=test_db">Test</a>
@@ -64,7 +64,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="index.php?page=login">Login</a>
+                    <a class="nav-link" href="index.php?page=logout">Logout</a>
                 </li>
             </ul>
             <!-- <form class="form-inline my-2 my-lg-0"> -->
@@ -79,32 +79,6 @@
         </div>
     </nav>
     <!-- <div id="table"></div> -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox" style=" width:100%; height: 500px !important;">
-          <div class="carousel-item active">
-            <img src="images/bank1.jpg" class="d-block w-100" alt="bank1">
-          </div>
-          <div class="carousel-item">
-            <img src="images/bank2.jpg" class="d-block w-100" alt="bank2">
-          </div>
-          <div class="carousel-item">
-            <img src="images/bank3.jpg" class="d-block w-100" alt="bank3">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
     <script type="text/javascript" src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
