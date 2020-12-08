@@ -27,3 +27,18 @@ function showSearchCustomer() {
     xhttp.open("GET", "customer.php?customer_id="+str, true);
     xhttp.send();
 }
+
+function showSearchService() {
+    var xhttp;
+    var str = document.getElementById("search_service_text").value;
+    console.log(str);
+
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("customer_id").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "report.php?customer_id="+str, true);
+    xhttp.send();
+}
