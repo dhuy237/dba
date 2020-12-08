@@ -28,37 +28,46 @@ if (isset($_POST["login"])) {
 
 <head>
     <title>Database Systems Assignment</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
     <br />
-    <div class="container">
-        <h2 align="center">Bank Database</h2>
-        <br />
-        <div class="panel panel-default">
-
-            <div class="panel-heading">Login</div>
-            <div class="panel-body">
-                <form method="post">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" name="user_email" id="user_email" class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" name="user_password" id="user_password" class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" name="login" id="login" class="btn btn-info" value="Login" />
-                    </div>
-                </form>
+    <div class="card">
+        <div class="col-lg-4 col-lg-offset-4" style=" margin:1%; margin-left: auto; margin-right: auto;">
+            <br />
+            <div class="panel panel-default">
+                <h4>Log in to Bank Database</h4>
+                <div class="panel-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" name="user_email" id="user_email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="user_password" id="user_password" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="login" id="login" class="btn btn-primary" value="Login" />
+                        </div>
+                    </form>
+                </div>
             </div>
+            <br />
         </div>
-        <br />
     </div>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
