@@ -3,10 +3,11 @@
 function validEndDate($aDate){
     if ($aDate == null){
         return "Present";
-    } else {
+    } 
+    else {
         return $aDate->format('Y-m-d');
     }
- }
+}
 
 // Test connection
 $server_name = "bankingdb-hcmut.database.windows.net";
@@ -54,6 +55,11 @@ if (!empty($_GET['employee_id'])){
                     <ul class=\"timeline\">";
         echo "<li><p>" . $row2['StartDate']->format('Y-m-d') . " - " . validEndDate($row2['EndDate']). "</p>";
         echo "<p>" . $row2['B_name'] . "</p></li>";
+        while($row2 = sqlsrv_fetch_array($query2)){
+            // For multiple phone number
+            echo "<li><p>" . $row2['StartDate']->format('Y-m-d') . " - " . validEndDate($row2['EndDate']). "</p>";
+            echo "<p>" . $row2['B_name'] . "</p></li>";
+        }
         echo "
                     </ul>
             </div>
