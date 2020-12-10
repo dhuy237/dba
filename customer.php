@@ -21,6 +21,7 @@ if (!empty($_GET['customer_id'])){
     $sql = "SELECT Customer.C_Code, C_FirstName, C_LastName, C_Email, C_HomeAddress, C_OfficeAddress, C_Phone
             FROM Customer, CustomerPhone
             WHERE Customer.C_code = CustomerPhone.C_code and Customer.C_code = $id;";
+
     $query = sqlsrv_query($conn, $sql);
     $row = sqlsrv_fetch_array($query);
     if (!empty($row)) {
@@ -34,11 +35,15 @@ if (!empty($_GET['customer_id'])){
         echo "<p class=\"card-text\">C_HomeAddress: " . $row['C_HomeAddress'] . "</p>";
         echo "<p class=\"card-text\">C_OfficeAddress: " . $row['C_OfficeAddress'] . "</p>";
         echo "<p class=\"card-text\">C_Phone: " . $row['C_Phone'] . "</p>";
+        while($row = sqlsrv_fetch_array($query)){
+            // For multiple phone number
+            echo "<p class=\"card-text\">" . str_repeat('&nbsp;', 16) . $row['C_Phone'] . "</p>";
+        }
         echo "
             </div>
-        </div>";
+        </div>"; 
     }
-
+    
     // Get Customer Account
     // Checking Account
     $sql2 = "SELECT C_Code, Account.Acc_Number, Account.Acc_Type, Account.Date, CheckingAccount.Balance
