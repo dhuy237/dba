@@ -5,59 +5,21 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>  
+        $(document).ready(function(){
+            $('#header').load("header.html");
+        });
+    </script> 
     <title>Search Customer</title>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.php?page=home">
-            <img src="images/1.png" width="30" height="auto" class="d-inline-block align-top" alt="" loading="lazy">
-            Bank Database
-          </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=test_db">Test</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Employee
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php?page=employee">Search Employee</a>
-                        <a class="dropdown-item" href="index.php?page=report">Report</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Customer
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="index.php?page=customer">Search Customer</a>
-                        <a class="dropdown-item" href="index.php?page=add">Add New Account</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=logout">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="header"></div>
     <div class="col-lg-4 col-lg-offset-4" style=" margin:1%; margin-left: auto; margin-right: auto;">
         <h4>Add New Account</h4>
         <form action="addexisted.php" method="post">
             <div class="form-group">
-                <label for="customer_code">C_Code</label>
+                <label for="customer_code">Customer Code</label>
                 <input type="number" class="form-control" name="customer_code" id="customer_code" placeholder="123">
             </div>
             <div class="form-group">
@@ -99,9 +61,6 @@
     </div>
     
     <script type="text/javascript" src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>

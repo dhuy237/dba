@@ -13,6 +13,9 @@ if (isset($_POST["login"])) {
     if ($conn) {
         // For testing
         // echo "Connection established: " . $server_name;
+        session_start();
+        $_SESSION['user_name'] = $user_name;
+        $_SESSION['password'] = $password;
         setcookie("type", $user_name, time() + 3600);
         header("location:index.php?page=home");
     }
@@ -42,7 +45,7 @@ if (isset($_POST["login"])) {
                 <div class="panel-body">
                     <form method="post">
                         <div class="form-group">
-                            <label>Email</label>
+                            <label>Username</label>
                             <input type="text" name="user_email" id="user_email" class="form-control" />
                         </div>
                         <div class="form-group">

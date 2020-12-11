@@ -1,6 +1,7 @@
 <?php 
+session_start();
 $server_name = "bankingdb-hcmut.database.windows.net";
-$connection = array("Database"=>"BankingDB", "UID"=>"bankowner", "PWD"=>"Test1234");
+$connection = array("Database"=>"BankingDB", "UID"=>$_SESSION['user_name'], "PWD"=>$_SESSION['password']);
 
 $conn = sqlsrv_connect($server_name, $connection);
 
@@ -29,9 +30,8 @@ $params = array(
     array($ins_rate, SQLSRV_PARAM_IN)
 );
 $stmt = sqlsrv_query($conn, $sql, $params);
-// $stmt = sqlsrv_prepare($conn, $sql);
 if ($stmt === false) {
-    echo "Something wrong, try again!";
+    header("location:index.php?page=addError");
     die;
 }
 header("location:index.php?page=addExistedDone");

@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>  
+        $(document).ready(function(){
+            $('#header').load("header.html");
+        });
+    </script> 
     <title>Add Customer</title>
 </head>
-
 <body>
+    <div id="header"></div>
     <div class="text-center" style="margin:1%;">
-        <!-- <div class="mx-auto" style="margin:1%;">
-            <input class="form-control mr-sm-2" id="search_customer_text" type="number" autocomplete="off"
-                placeholder="Customer Code"/>
-            <button class="btn btn-outline-success my-2 my-sm-0" id="search_button" onclick="showSearchCustomer()" type="button">Search</button>
-        </div> -->
         <div class="card" style="width: 25rem; margin-left: auto; margin-right: auto;">
             <div class="card-body">
               <h5 class="card-title">Add New Customer Success!</h5> 
@@ -22,11 +23,7 @@
           </div>
         <button type="button" class="btn btn-secondary btn-lg" id="existed_customer" onclick="location.href='index.php?page=home'" style="margin: 1%;">Return to Homepage</button>
     </div>
-    <!-- <div id="customer_id"></div> -->
     <script type="text/javascript" src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>

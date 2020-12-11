@@ -1,6 +1,7 @@
 <?php 
+session_start();
 $server_name = "bankingdb-hcmut.database.windows.net";
-$connection = array("Database"=>"BankingDB", "UID"=>"bankowner", "PWD"=>"Test1234");
+$connection = array("Database"=>"BankingDB", "UID"=>$_SESSION['user_name'], "PWD"=>$_SESSION['password']);
 
 $conn = sqlsrv_connect($server_name, $connection);
 
@@ -17,12 +18,12 @@ $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $email_address = $_POST['email_address'];
 $home_address = $_POST['home_address'];
-$office_address = $_POST['office_address'];
+$office_address = !empty($_POST['office_address'])?$_POST['office_address']:NULL;
 $phone_number = $_POST['phone_number'];
 $account_check = $_POST['account_type'];
 $date_input = $_POST['date_input'];
-$balance = $_POST['balance'];
-$ins_rate = $_POST['ins_rate'];
+$balance = !empty($_POST['balance'])?$_POST['balance']:NULL;
+$ins_rate = !empty($_POST['ins_rate'])?$_POST['ins_rate']:NULL;
 
 $sql = "EXEC [dbo].[SP_InsertCustomer] @c_firstname = ?, @c_lastname = ?, @c_email = ?, @c_homeaddress = ?, @c_officeAddress = ?, @c_phone = ?, @acc_type = ?, @date = ?, @balance = ?, @insRate = ?";
 
@@ -41,7 +42,16 @@ $params = array(
 $stmt = sqlsrv_query($conn, $sql, $params);
 // $stmt = sqlsrv_prepare($conn, $sql);
 if ($stmt === false) {
-    echo "Something wrong, try again!";
+    // if( ($errors = sqlsrv_errors() ) != null) {
+    //     // Get detailed error messages
+    //     foreach( $errors as $error ) {
+    //         echo "SQLSTATE: ".$error['SQLSTATE']."<br />";
+    //         echo "code: ".$error['code']."<br />";
+    //         echo "message: ".$error['message']."<br />";
+    //     }
+    // }
+    
+    header("location:index.php?page=addError");
     die;
 }
 header("location:index.php?page=addNewDone");
