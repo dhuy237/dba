@@ -113,8 +113,7 @@ if (!empty($_GET['customer_id'])){
                 </div>
             </div>
             <button type=\"button\" class=\"btn btn-secondary btn-lg\" id=\"existed_customer\" onclick=\"location.href='index.php?page=customer'\" style=\"margin: 1%;\">Go to Search</button>
-            </div>
-        ";
+            </div>";
     }
 }
 sqlsrv_close($conn);

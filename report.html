@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>  
         $(document).ready(function(){
             $('#header').load("header.html");
+            $('#footer').load("footer.html");
         });
     </script> 
     <title>Search Customer</title>
@@ -25,6 +26,7 @@
         </div>
     </form>
     <div id="customer_id" class="container" style="width: 21cm; margin-left: auto; margin-right: auto; background:white"></div>
+    <div id="footer"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" 
         integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
         crossorigin="anonymous">

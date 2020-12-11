@@ -20,8 +20,15 @@ if (isset($_POST["login"])) {
         header("location:index.php?page=home");
     }
     else {
-        echo "<div class='alert alert-danger'>Wrong Email Address or Password!</div>";
-        die(print_r(sqlsrv_errors(), true));
+        echo "
+            <div class=\"text-center\" style=\"margin:1%;\">
+            <div class=\"card\" style=\"width: 25rem; margin-left: auto; margin-right: auto;\">
+                <div class=\"card-body\">
+                <h5 class=\"card-title\">Incorrect Username or Password!</h5> 
+                </div>
+            </div>
+            </div>";
+        // die(print_r(sqlsrv_errors(), true));
     }
 }
 ?>

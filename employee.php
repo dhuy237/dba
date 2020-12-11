@@ -10,7 +10,6 @@ function validEndDate($aDate){
     }
 }
 
-// Test connection
 session_start();
 $server_name = "bankingdb-hcmut.database.windows.net";
 $connection = array("Database"=>"BankingDB", "UID"=>$_SESSION['user_name'], "PWD"=>$_SESSION['password']);
@@ -78,8 +77,7 @@ if (!empty($_GET['employee_id'])) {
                 </div>
             </div>
             <button type=\"button\" class=\"btn btn-secondary btn-lg\" id=\"existed_customer\" onclick=\"location.href='index.php?page=employee'\" style=\"margin: 1%;\">Go to Search</button>
-            </div>
-        ";
+            </div>";
     }
 }
 sqlsrv_close($conn);
