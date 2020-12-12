@@ -48,3 +48,7 @@ else {
 - Open a browser.
 - Go to `http://localhost/DatabaseSystems`.
 - Log in to the website.
+    - Username: manager_login_test1 (Read and Write Only)
+    - Password: Test4321!!!
+    - Username: bankowner (Admin)
+    - Password: Test1234

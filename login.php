@@ -11,13 +11,49 @@ if (isset($_POST["login"])) {
     $conn = sqlsrv_connect($server_name, $connection);
 
     if ($conn) {
-        // For testing
+        // For connection testing
         // echo "Connection established: " . $server_name;
-        session_start();
-        $_SESSION['user_name'] = $user_name;
-        $_SESSION['password'] = $password;
-        setcookie("type", $user_name, time() + 3600);
-        header("location:index.php?page=home");
+        // Check if the user account has permission to log in to this website
+        $sql = "IF (IS_MEMBER('db_datareader') = 1  and IS_MEMBER('db_datawriter') = 1)
+                    SELECT 1
+                ELSE 
+                    SELECT 0;";
+        $query = sqlsrv_query($conn, $sql);
+        $row = sqlsrv_fetch_array($query);
+        if (!empty($row)) {
+            if ($row[0] == 1) {
+                // gettype($row[0]) is "int"
+                // 1 is "true" and 0 is "false"
+                session_start();
+                $_SESSION['user_name'] = $user_name;
+                $_SESSION['password'] = $password;
+                // "type = 1" is manager and can access this website
+                $_SESSION['type'] = "1";
+                setcookie("type", $user_name, time() + 3600);
+                header("location:index.php?page=home");
+            }
+            else {
+                echo "
+                <div class=\"text-center\" style=\"margin:1%;\">
+                <div class=\"card\" style=\"width: 25rem; margin-left: auto; margin-right: auto;\">
+                    <div class=\"card-body\">
+                    <h5 class=\"card-title\">You don't have permission to access this website</h5> 
+                    </div>
+                </div>
+                </div>";
+            }
+        }
+        else {
+            echo "
+                <div class=\"text-center\" style=\"margin:1%;\">
+                <div class=\"card\" style=\"width: 25rem; margin-left: auto; margin-right: auto;\">
+                    <div class=\"card-body\">
+                    <h5 class=\"card-title\">Something Wrong, try again!</h5> 
+                    </div>
+                </div>
+                </div>";
+            // die(print_r(sqlsrv_errors(), true));
+        }
     }
     else {
         echo "

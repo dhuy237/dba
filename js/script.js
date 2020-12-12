@@ -43,11 +43,6 @@ function showSearchService() {
     xhttp.send();
 }
 
-// $("#existed_customer").click(() => exportPDF());
-
-// var export_btn = document.getElementById("existed_customer");
-// export_btn.addEventListener("click", () => exportPDF());
-
 function exportPDF() {
     var doc = new jsPDF('p', 'mm', [297, 210]);
     // var elementHTML = $('#customer_id'); 
