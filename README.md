@@ -52,3 +52,4 @@ else {
     - Password: Test4321!!!
     - Username: bankowner (Admin)
     - Password: Test1234
+- Demo video: [Link](https://youtu.be/8jss3I__23A)
