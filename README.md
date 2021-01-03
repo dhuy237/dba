@@ -53,3 +53,6 @@ else {
     - Username: bankowner (Admin)
     - Password: Test1234
 - Demo video: [Link](https://youtu.be/8jss3I__23A)
+
+![](images/demo.gif)
+
