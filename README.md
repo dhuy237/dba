@@ -1,6 +1,6 @@
 # Bank Database Website
 
-## Prerequisites
+## :pushpin: Prerequisites
 ### XAMPP
 - Install XAMPP: [Link](https://www.apachefriends.org/index.html)
 
@@ -11,7 +11,7 @@
 - Install Microsoft Drivers for PHP for SQL Server into `C:\xampp\php\ext` folder: [Link](https://docs.microsoft.com/en-us/sql/connect/php/download-drivers-php-sql-server?view=sql-server-ver15)
 - Open `php.ini` (You can open with XAMPP in the `Apache Config` menu)
 - Check your PHP version by create this `phpinfo.php` and open it on your browser:
-```
+```php
 <?php
     echo phpinfo()
 ?>
@@ -23,7 +23,7 @@ extension=php_sqlsrv_74_ts_x64.dll
 ```
 ### Check your installation
 Create `test.php`:
-```
+```php
 <?php
 // Test connection
 $server_name = "bankingdb-hcmut.database.windows.net";
@@ -42,7 +42,7 @@ else {
 ?>
 ```
 
-## Usage
+## :rocket: Usage
 
 - Start the PHP server on XAMPP.
 - Open a browser.
